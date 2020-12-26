@@ -12,7 +12,7 @@ The method can be called from a compiled .jar file with
 
 and it reads the configuration settings in the file "RRDBulkWriter.config" (example located next to the readme). 
 
-This config file is expected in the folder of the .jar.
+This config file is expected in the folder of the .jar. 
 A compiled .jar is included in the "target" folder.
 Some output is printed on the terminal to show the process is working, the complete log and all other output is stored under "/user/rrd4j-demo".
 The output consists of the requested <itemname>.rrd file, the <itemname>.log and an <itemname>.png graphic file showing a graph of the data.
