@@ -16,9 +16,9 @@ The "RRDBulkWriter.config" contains the following data:
 
 #Name of the item to be persisted.
 
-file=filename.
+file=filename
 
-#Start Time format yyyy, mm (Zero based!), dd, hh, mm  Example 2020. 0, 1, 0, 0 = 2020 Jan 1st, 00:00Z.
+#Start Time format yyyy, mm (Zero based!), dd, hh, mm  Example 2020, 0, 1, 0, 0 = 2020 Jan 1st, 00:00Z.
 
 start=2020,0,1,0,0
 
