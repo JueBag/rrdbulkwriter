@@ -15,16 +15,22 @@ The output consists of the requested <itemname>.rrd file, the <itemname>.log and
 The "RRDBulkWriter.config" contains the following data:
 
 #Name of the item to be persisted.
+
 file=filename.
 #Start Time format yyyy, mm (Zero based!), dd, hh, mm  Example 2020. 0, 1, 0, 0 = 2020 Jan 1st, 00:00Z.
+
 start=2020,0,1,0,0
 #End Time
+
 end=2020,11,1,0,0
 Name or IP of openHAB Server.
+
 openhabserver=openHABServer
 Name of persistence service that was used.
+
 persistenceservice=influxdb
 Selected archive seup ( 1 = OH2 default, 2 = OH3 default_numeric, 3 = OH3 default_quantifiable)-
+
 archivesetup=1
 
 For the selection of the archive type please refer to the openHAB rrd4j documantation, all default setup details are listed there.
