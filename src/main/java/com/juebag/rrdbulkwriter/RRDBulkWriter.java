@@ -70,19 +70,6 @@ public class RRDBulkWriter {
         System.setProperty("java.awt.headless", "true");
  
         println("== Starting RRDBulkWriter");
-        //args are (presently?) NOT used!
-       /*  if (args.length > 0) {
-            RrdDb.setDefaultFactory(args[0]);
-        } */
-   
-        //Vars that get set by RRDBulkWriter.Config
-        //String file = "item_name";
-        //long startTime = Util.getTimestamp(2019, 0,1,0,0);  //required Format Year, Month (ZERO based!), Day, Hour, Minute (Example to read 2019 Jan 1st, 00:00Z)
-        //long endTime = Util.getTimestamp(2020, 11, 1,0,0); //required Format Year, Month (ZERO based!), Day, Hour, Minute (Example to read 2020 JDec 1st, 00:00Z)
-        //String openHAB_Server = "openHAB_Server"; // required! Name or IP of openHAB-server.
-        //String persistence_Service = "rrd4j"; //required! Name of the persistence service where the data is fetched from!
-        //int archive_Seutp=1; // required! Selection either 1 (OH2 default), 2 (OH§ default_numeric) or 3 (OH§ default_quantifiable)
- 
         Properties prop = new Properties();
         String fileName = "RRDBulkWriter.config";
         InputStream is = null;
