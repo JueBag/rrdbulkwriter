@@ -4,7 +4,7 @@ RRDBulkWriter
 Java Tool for openHAB users.
 
 The tool has a single method "RRDBulkWriter" which will fetch the persisted data from a single item and put it into an rrd4j file (.rrd).
-The method is located under "src/main/java/com/juebag/rrdbulkwriter").
+The method is located under "src/main/java/com/juebag/rrdbulkwriter".
 
 The method can be called from a compiled .jar file with 
 "java -cp rrdbulkwriter-1.0-jar-with-dependencies com.juebag.rrdbulkwriter.RRDBulkWriter"
