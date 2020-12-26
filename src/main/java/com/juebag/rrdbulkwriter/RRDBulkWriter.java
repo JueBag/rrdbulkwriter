@@ -41,8 +41,8 @@ import org.rrd4j.graph.TimeLabelFormat;
 
 
 /**
- * Writes a complete .rrd using the provided data and the set datasource and archive structure
- * Creates two files in your $HOME/rrd4j-demo directory: demo.rrd and demo.png.
+ * Reads data saved by a Persistence Service of openHAB and stores it into an .rrd file to be read by rrdj-Persistence.
+ * Data is read by a single REST API call from the selected Persistence Service.
  */
 public class RRDBulkWriter {
 
@@ -57,14 +57,10 @@ public class RRDBulkWriter {
      * <p>
      * To start the BulkWriter, use the following command:
      * </p>
-     * 
      * <pre>
-     * java -cp rrd4j-3.3.1.jar org.rrd4j.demo.RRDBulkWriter
+     * java -cp rrdbulkwriter-1.0-jar-with-dependencies com.juebag.rrdbulkwriter.RRDBulkWriter
      * </pre>
      * 
-     * Reads data saved by a Persistence Service of openHAB and stores it into an
-     * .rrd file to be read by rrdj-Persistence.
-     * Data is read by a single REST API call from the selected Persistence Service.
      * 
      * @param args the name of the backend factory to use (optional)
      * @throws java.io.IOException  Thrown

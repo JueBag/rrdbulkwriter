@@ -7,6 +7,7 @@ The tool has a single method "RRDBulkWriter" which will fetch the persisted data
 The method is located under "src/main/java/com/juebag/rrdbulkwriter").
 
 The method can be called from a compiled .jar file with "java -cp rrdbulkwriter-1.0-jar-with-dependencies com.juebag.rrdbulkwriter.RRDBulkWriter" and it reads the configuration settings in the file "RRDBulkWriter.config" (example located next to the readme). 
+A compiled .jar is included in the 7target folder.
 This config file is expected in the folder of the .jar.
 Some output is printed on the terminal to show the process is working, the complete log and all other output is stored under "/user/rrd4j-demo".
 The output consists of the requested <itemname>.rrd file, the <itemname>.log and an <itemname>.png graphic file showing a graph of the data.
