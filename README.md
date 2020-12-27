@@ -23,7 +23,7 @@ The configuration file "RRDBulkWriter.config" is expected in the folder of the .
 | `-stop`                | Start Time format yyyy, mm (Zero based!), dd, hh, mm  (Example 2020, 0, 1, 0, 0 = 2020 Jan 1st, 00:00Z)|
 | `-openhabserver`       | Name or IP of openHAB Server                                                                           |
 | `-persistenceservice`  | Name of persistence service that was used originally                                                   |
-| `-archivesetup`        | Selected archive seup ( 1 = OH2 default, 2 = OH3 default_numeric, 3 = OH3 default_quantifiable)        |
+| `-archivesetup`        | Selected archive setup ( 1 = OH2 default, 2 = OH3 default_numeric, 3 = OH3 default_quantifiable)        |
 
 
 For the selection of the archive type please refer to the [openHAB rrd4j documentation](https://openhab.org/addons/persistence/rrd4j/#default-datasource) and [openHAB version 2 rrd4j documentation](https://v2.openhab.org/v2.5/addons/persistence/rrd4j/#example), all default setup details are listed there.
