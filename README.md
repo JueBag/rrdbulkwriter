@@ -26,7 +26,7 @@ The configuration file "RRDBulkWriter.config" is expected in the folder of the .
 | `-archivesetup`        | Selected archive seup ( 1 = OH2 default, 2 = OH3 default_numeric, 3 = OH3 default_quantifiable)        |
 
 
-For the selection of the archive type please refer to the [openHAB rrd4j documentation] (https://openhab.org/addons/persistence/rrd4j/#default-datasource) and [openHAB version 2 rrd4j documentation] (https://v2.openhab.org/v2.5/addons/persistence/rrd4j/#example), all default setup details are listed there.
+For the selection of the archive type please refer to the [openHAB rrd4j documentation](https://openhab.org/addons/persistence/rrd4j/#default-datasource) and [openHAB version 2 rrd4j documentation](https://v2.openhab.org/v2.5/addons/persistence/rrd4j/#example), all default setup details are listed there.
 Understanding the archive setup is neccessary in order to select a meaningfull setup for start- and endtime. 
 Requesting a duration between start- and endtime lasting longer then the timeframe covered by the last archive (i.e. the archive with the longest duration) cause the tool only to run longer, it will not put in more data then the last archive can take.
 During the run a datapoint will be created for each minute of the duration, rrd4j will then consolidate those datapoints according to the archive setup. 
