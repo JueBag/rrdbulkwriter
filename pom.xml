@@ -79,7 +79,8 @@
           <artifactId>maven-project-info-reports-plugin</artifactId>
           <version>3.0.0</version>
         </plugin>
-
+        <!-- the following plugin is used for creating a jar with all its dependencies(.jars)-->
+        <!-- use "mvn clean compile assembly:single" to create the .jar -->
         <plugin>
           <artifactId>maven-assembly-plugin</artifactId>
           <configuration>
