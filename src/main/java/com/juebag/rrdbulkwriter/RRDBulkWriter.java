@@ -197,8 +197,8 @@ public class RRDBulkWriter {
             HttpResponse<String> response = client.send(request, BodyHandlers.ofString());
             json= response.body();
         } catch (Exception e) {
-            println("HTTP Request failed, correct openHABServer setting? Bailing out!");
-            log.println("HTTP Request failed, correct openHABServer setting? Bailing out!");
+            println("HTTP Request failed, is openHABServer correctly set? Bailing out!");
+            log.println("HTTP Request failed, is openHABServer correctly set? Bailing out!");
             log.close();
             return;
         }
