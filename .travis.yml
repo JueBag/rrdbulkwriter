@@ -1,2 +1,2 @@
 language: java
-script: ./scripts/run_compile_assembly.sh
+mvn clean compile assembly:single
