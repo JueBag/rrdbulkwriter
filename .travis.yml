@@ -1,1 +1,2 @@
+language: java
 script: ./scripts/run_compile_assembly.sh
