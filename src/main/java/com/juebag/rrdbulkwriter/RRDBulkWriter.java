@@ -101,14 +101,22 @@ public class RRDBulkWriter {
      
         DateFormat df = new SimpleDateFormat("yyyy-MM-dd'T'HH'%3A'mm'%3A'ss.000'Z'"); // correct format for REST API call!
         Date startDate = new Date(start*1000);
-        Date endDate = new Date(end*1000);
+        Date endDate = new Date(end * 1000);
+        
         String rrdPath = Util.getRrd4jDemoPath(file + ".rrd");
-        String imgPath = Util.getRrd4jDemoPath(file + ".png"); //needed?
+        String imgPath = Util.getRrd4jDemoPath(file + ".png"); 
 
         println("== Start: " +df.format(startDate));
         println("== End: " +df.format( endDate));
         log.println("== Start: " +df.format(startDate));
-        log.println("== End: " +df.format( endDate));
+        log.println("== End: " + df.format(endDate));
+        if (startDate.after(endDate))
+            {
+                println("Requested Start is after End! Can't work that way, bailing out");
+                log.println("Requested Start is after End! Can't work that way, bailing out");
+                log.close();
+                return;
+            }
         log.println("== Creating RRD file " + rrdPath);
         RrdDef rrdDef = new RrdDef(rrdPath, start - 1, MAX_STEP);
         rrdDef.setVersion(2);
@@ -183,14 +191,25 @@ public class RRDBulkWriter {
         HttpClient client = HttpClient.newHttpClient();
         HttpRequest request = HttpRequest.newBuilder()
               .uri(URI.create(resturl))
-              .build();
-    
-        HttpResponse<String> response = client.send(request, BodyHandlers.ofString());
-        String json= response.body();
-        //String json = "{\"name\":\"E10_1\",\"datapoints\":\"2703\",\"data\":[{\"time\":1605735900000,\"state\":\"1.149\"}]}";
-
+                .build();
+        String json="";
+        try {
+            HttpResponse<String> response = client.send(request, BodyHandlers.ofString());
+            json= response.body();
+        } catch (Exception e) {
+            println("HTTP Request failed, correct openHABServer setting? Bailing out");
+            log.println("HTTP Request failed, correct openHABServer setting? Bailing out");
+            log.close();
+            return;
+        }
         JSONObject obj = new JSONObject(json);
         JSONArray arr = obj.getJSONArray("data");
+        if (arr.length() == 0) {
+            println("No data found in JSON-String! Bailing out");
+            log.println("No data found in JSON-String! Bailing out");
+            log.close();
+            return;
+        }
         NavigableMap<Long, Double> valueMap = new TreeMap<Long, Double>();
         log.println("Reading the data");
         for (int i = 0; i < arr.length(); i++) {
