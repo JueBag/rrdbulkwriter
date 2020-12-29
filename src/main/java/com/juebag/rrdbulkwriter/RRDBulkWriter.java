@@ -257,7 +257,9 @@ public class RRDBulkWriter {
         gDef.setFilename(imgPath);
         gDef.setStartTime(start);
         gDef.setEndTime(end);
-        gDef.setTitle("Values from " + start + " to " + end);
+        df = new SimpleDateFormat("yyyy-MM-dd'T'HH':'mm'Z'"); // correct format for REST API call!
+        gDef.setTitle("Values from " + df.format(startDate) + " to " + df.format(endDate));
+        //gDef.setTitle("Values from " + start + " to " + end);
         gDef.setVerticalLabel("Values");
         gDef.datasource(STATE, rrdPath, STATE, cFunc);
         gDef.line(STATE, Color.BLUE, "imported values");
