@@ -76,13 +76,13 @@ public class RRDBulkWriter {
         try {
             is = new FileInputStream(fileName);
         } catch (FileNotFoundException ex) {
-            println("No RRDBulkWriter.config file found! Can't work without, bailing out");
+            println("No RRDBulkWriter.config file found! Can't work without, bailing out!");
             return;
         }
         try {
             prop.load(is);
         } catch (IOException ex) {
-            println("Data from RRDBulkWriter.config could not be read! Can't work without, bailing out");
+            println("Data from RRDBulkWriter.config could not be read! Can't work without, bailing out!");
             return;
         }
         String time= prop.getProperty("start");
@@ -112,8 +112,8 @@ public class RRDBulkWriter {
         log.println("== End: " + df.format(endDate));
         if (startDate.after(endDate))
             {
-                println("Requested Start is after End! Can't work that way, bailing out");
-                log.println("Requested Start is after End! Can't work that way, bailing out");
+                println("Requested Start is after End! Can't work that way, bailing out!");
+                log.println("Requested Start is after End! Can't work that way, bailing out!");
                 log.close();
                 return;
             }
@@ -171,8 +171,8 @@ public class RRDBulkWriter {
             if (rrdDb.getRrdDef().equals(rrdDef)) {
                 log.println("Checking RRD file structure... OK");
             } else {
-                println("Invalid RRD file created. This is a serious bug, bailing out");
-                log.println("Invalid RRD file created. This is a serious bug, bailing out");
+                println("Invalid RRD file created. This is a serious bug, bailing out!");
+                log.println("Invalid RRD file created. This is a serious bug, bailing out!");
                 log.close();
                 return;
             }
@@ -197,16 +197,16 @@ public class RRDBulkWriter {
             HttpResponse<String> response = client.send(request, BodyHandlers.ofString());
             json= response.body();
         } catch (Exception e) {
-            println("HTTP Request failed, correct openHABServer setting? Bailing out");
-            log.println("HTTP Request failed, correct openHABServer setting? Bailing out");
+            println("HTTP Request failed, correct openHABServer setting? Bailing out!");
+            log.println("HTTP Request failed, correct openHABServer setting? Bailing out!");
             log.close();
             return;
         }
         JSONObject obj = new JSONObject(json);
         JSONArray arr = obj.getJSONArray("data");
         if (arr.length() == 0) {
-            println("No data found in JSON-String! Bailing out");
-            log.println("No data found in JSON-String! Bailing out");
+            println("No data found in JSON-String! Bailing out!");
+            log.println("No data found in JSON-String! Bailing out!");
             log.close();
             return;
         }
