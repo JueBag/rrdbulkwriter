@@ -12,7 +12,7 @@ The method can be called from a compiled .jar file with
 
 Some output is printed on the terminal to show the process is working, the complete log and all other output is stored under "/user/rrd4j-demo".
 The output consists of the requested <itemname>.rrd file, the <itemname>.log and an <itemname>.png graphic file showing a graph of the data.
-A compiled .jar is included in the "target" folder.
+A compiled .jar is provided under [Releases](https://github.com/JueBag/rrdbulkwriter/releases).
   
 # Configuration
 The configuration file "RRDBulkWriter.config" is expected in the folder of the .jar. An example is loacated next to this README.
