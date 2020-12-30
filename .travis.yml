@@ -1,2 +1,1 @@
 language: java
-script: bundle exec mvn clean compile assembly:single
