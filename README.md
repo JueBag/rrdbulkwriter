@@ -31,5 +31,6 @@ Understanding the archive setup is neccessary in order to select a meaningfull s
 Requesting a duration between start- and endtime lasting longer then the timeframe covered by the last archive (i.e. the archive with the longest duration) cause the tool only to run longer, it will not put in more data then the last archive can take.
 During the run a datapoint will be created for each minute of the duration, rrd4j will then consolidate those datapoints according to the archive setup. 
 If there is no datapoint for a specific minute in the source database the tool will copy the value from the last data in the the source database.
+The configured timeframe and archive setup will be used for all items.
 
 
