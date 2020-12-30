@@ -3,7 +3,7 @@
 
 Java Tool for openHAB users.
 
-The tool has a single method "RRDBulkWriter" which will fetch the persisted data from a single item and put it into an rrd4j file (.rrd).
+The tool has a single method "RRDBulkWriter" which will fetch the persisted data from the configured item(s) and put it into rrd4j file(s) (.rrd).
 The method is located under "src/main/java/com/juebag/rrdbulkwriter".
 
 The method can be called from a compiled .jar file with
@@ -11,19 +11,19 @@ The method can be called from a compiled .jar file with
 "java -cp rrdbulkwriter-{actual version}-jar-with-dependencies.jar com.juebag.rrdbulkwriter.RRDBulkWriter".
 
 Some output is printed on the terminal to show the process is working, the complete log and all other output is stored under "/user/rrd4j-demo".
-The output consists of the requested <itemname>.rrd file, the <itemname>.log and an <itemname>.png graphic file showing a graph of the data.
+for each item the output consists of the requested {itemname}.rrd file, the {itemname}.log and an {itemname}.png graphic file showing a graph of the data.
 A compiled .jar is provided under [Releases](https://github.com/JueBag/rrdbulkwriter/releases).
   
 # Configuration
 The configuration file "RRDBulkWriter.config" is expected in the folder of the .jar. An example is loacated next to this README.
 | Setting                | Description                                                                                            |
 | -----------------------| ------------------------------------------------------------------------------------------------------ |
-| `-file`                | Name of the item to be persisted                                                                       |
+| `-file`                | Name of the item(s) to be persisted, seperated by a ","                                                |
 | `-start`               | Start Time format yyyy, mm (Zero based!), dd, hh, mm  (Example 2020, 0, 1, 0, 0 = 2020 Jan 1st, 00:00Z)|
 | `-stop`                | Start Time format yyyy, mm (Zero based!), dd, hh, mm  (Example 2020, 0, 1, 0, 0 = 2020 Jan 1st, 00:00Z)|
 | `-openhabserver`       | Name or IP of openHAB Server                                                                           |
 | `-persistenceservice`  | Name of persistence service that was used originally                                                   |
-| `-archivesetup`        | Selected archive setup ( 1 = OH2 default, 2 = OH3 default_numeric, 3 = OH3 default_quantifiable)        |
+| `-archivesetup`        | Selected archive setup ( 1 = OH2 default, 2 = OH3 default_numeric, 3 = OH3 default_quantifiable)       |
 
 
 For the selection of the archive type please refer to the [openHAB rrd4j documentation](https://openhab.org/addons/persistence/rrd4j/#default-datasource) and [openHAB version 2 rrd4j documentation](https://v2.openhab.org/v2.5/addons/persistence/rrd4j/#example), all default setup details are listed there.
