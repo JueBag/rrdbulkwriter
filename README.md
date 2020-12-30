@@ -8,7 +8,7 @@ The method is located under "src/main/java/com/juebag/rrdbulkwriter".
 
 The method can be called from a compiled .jar file with
 
-"java -cp rrdbulkwriter-1.0-jar-with-dependencies com.juebag.rrdbulkwriter.RRDBulkWriter".
+"java -cp rrdbulkwriter-{actual version}-jar-with-dependencies.jar com.juebag.rrdbulkwriter.RRDBulkWriter".
 
 Some output is printed on the terminal to show the process is working, the complete log and all other output is stored under "/user/rrd4j-demo".
 The output consists of the requested <itemname>.rrd file, the <itemname>.log and an <itemname>.png graphic file showing a graph of the data.
